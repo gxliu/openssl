@@ -36,7 +36,7 @@ top:
 all:	lib
 
 lib:	$(LIBOBJ)
-	$(ARX) $(LIB) $(LIBOBJ)
+	$(AR) $(LIB) $(LIBOBJ)
 	$(RANLIB) $(LIB) || echo Never mind.
 	@touch lib
 
@@ -123,7 +123,7 @@ pem_info.o: ../cryptlib.h pem_info.c
 pem_lib.o: ../../e_os.h ../../include/openssl/asn1.h
 pem_lib.o: ../../include/openssl/bio.h ../../include/openssl/buffer.h
 pem_lib.o: ../../include/openssl/crypto.h ../../include/openssl/des.h
-pem_lib.o: ../../include/openssl/des_old.h ../../include/openssl/e_os2.h
+pem_lib.o: ../../include/openssl/e_os2.h
 pem_lib.o: ../../include/openssl/ec.h ../../include/openssl/ecdh.h
 pem_lib.o: ../../include/openssl/ecdsa.h ../../include/openssl/engine.h
 pem_lib.o: ../../include/openssl/err.h ../../include/openssl/evp.h
@@ -135,7 +135,7 @@ pem_lib.o: ../../include/openssl/pkcs12.h ../../include/openssl/pkcs7.h
 pem_lib.o: ../../include/openssl/rand.h ../../include/openssl/safestack.h
 pem_lib.o: ../../include/openssl/sha.h ../../include/openssl/stack.h
 pem_lib.o: ../../include/openssl/symhacks.h ../../include/openssl/ui.h
-pem_lib.o: ../../include/openssl/ui_compat.h ../../include/openssl/x509.h
+pem_lib.o: ../../include/openssl/x509.h
 pem_lib.o: ../../include/openssl/x509_vfy.h ../asn1/asn1_locl.h ../cryptlib.h
 pem_lib.o: pem_lib.c
 pem_oth.o: ../../e_os.h ../../include/openssl/asn1.h

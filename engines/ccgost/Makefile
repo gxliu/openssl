@@ -8,7 +8,7 @@ AR= ar r
 CFLAGS= $(INCLUDES) $(CFLAG)
 LIB=$(TOP)/libcrypto.a
 
-TEST=gost2814789t.c
+TEST=gost2814789test.c
 
 LIBSRC= gost2001.c gost2001_keyx.c gost89.c gost94_keyx.c gost_ameth.c gost_asn1.c gost_crypt.c gost_ctl.c gost_eng.c gosthash.c gost_keywrap.c gost_md.c gost_params.c gost_pmeth.c gost_sign.c
 
@@ -52,7 +52,6 @@ install:
 			cp cyg$(LIBNAME).dll $(INSTALL_PREFIX)$(INSTALLTOP)/$(LIBDIR)/engines/$${pfx}$(LIBNAME)$$sfx.new; \
 		else \
 			case "$(CFLAGS)" in \
-			*DSO_BEOS*) sfx=".so";; \
 			*DSO_DLFCN*) sfx=`expr "$(SHLIB_EXT)" : '.*\(\.[a-z][a-z]*\)' \| ".so"`;; \
 			*DSO_DL*) sfx=".sl";; \
 			*DSO_WIN32*) sfx="eay32.dll"; pfx=;; \
@@ -131,9 +130,9 @@ gost94_keyx.o: ../../include/openssl/buffer.h ../../include/openssl/crypto.h
 gost94_keyx.o: ../../include/openssl/dh.h ../../include/openssl/dsa.h
 gost94_keyx.o: ../../include/openssl/e_os2.h ../../include/openssl/ec.h
 gost94_keyx.o: ../../include/openssl/ecdh.h ../../include/openssl/ecdsa.h
-gost94_keyx.o: ../../include/openssl/engine.h ../../include/openssl/evp.h
-gost94_keyx.o: ../../include/openssl/lhash.h ../../include/openssl/obj_mac.h
-gost94_keyx.o: ../../include/openssl/objects.h
+gost94_keyx.o: ../../include/openssl/engine.h ../../include/openssl/err.h
+gost94_keyx.o: ../../include/openssl/evp.h ../../include/openssl/lhash.h
+gost94_keyx.o: ../../include/openssl/obj_mac.h ../../include/openssl/objects.h
 gost94_keyx.o: ../../include/openssl/opensslconf.h
 gost94_keyx.o: ../../include/openssl/opensslv.h
 gost94_keyx.o: ../../include/openssl/ossl_typ.h ../../include/openssl/pkcs7.h
@@ -179,8 +178,9 @@ gost_crypt.o: ../../include/openssl/buffer.h ../../include/openssl/crypto.h
 gost_crypt.o: ../../include/openssl/dsa.h ../../include/openssl/e_os2.h
 gost_crypt.o: ../../include/openssl/ec.h ../../include/openssl/ecdh.h
 gost_crypt.o: ../../include/openssl/ecdsa.h ../../include/openssl/engine.h
-gost_crypt.o: ../../include/openssl/evp.h ../../include/openssl/lhash.h
-gost_crypt.o: ../../include/openssl/obj_mac.h ../../include/openssl/objects.h
+gost_crypt.o: ../../include/openssl/err.h ../../include/openssl/evp.h
+gost_crypt.o: ../../include/openssl/lhash.h ../../include/openssl/obj_mac.h
+gost_crypt.o: ../../include/openssl/objects.h
 gost_crypt.o: ../../include/openssl/opensslconf.h
 gost_crypt.o: ../../include/openssl/opensslv.h ../../include/openssl/ossl_typ.h
 gost_crypt.o: ../../include/openssl/pkcs7.h ../../include/openssl/rand.h
@@ -247,9 +247,9 @@ gost_pmeth.o: ../../include/openssl/buffer.h ../../include/openssl/conf.h
 gost_pmeth.o: ../../include/openssl/crypto.h ../../include/openssl/dsa.h
 gost_pmeth.o: ../../include/openssl/e_os2.h ../../include/openssl/ec.h
 gost_pmeth.o: ../../include/openssl/ecdh.h ../../include/openssl/ecdsa.h
-gost_pmeth.o: ../../include/openssl/engine.h ../../include/openssl/evp.h
-gost_pmeth.o: ../../include/openssl/lhash.h ../../include/openssl/obj_mac.h
-gost_pmeth.o: ../../include/openssl/objects.h
+gost_pmeth.o: ../../include/openssl/engine.h ../../include/openssl/err.h
+gost_pmeth.o: ../../include/openssl/evp.h ../../include/openssl/lhash.h
+gost_pmeth.o: ../../include/openssl/obj_mac.h ../../include/openssl/objects.h
 gost_pmeth.o: ../../include/openssl/opensslconf.h
 gost_pmeth.o: ../../include/openssl/opensslv.h ../../include/openssl/ossl_typ.h
 gost_pmeth.o: ../../include/openssl/pkcs7.h ../../include/openssl/safestack.h
@@ -264,8 +264,9 @@ gost_sign.o: ../../include/openssl/buffer.h ../../include/openssl/crypto.h
 gost_sign.o: ../../include/openssl/dsa.h ../../include/openssl/e_os2.h
 gost_sign.o: ../../include/openssl/ec.h ../../include/openssl/ecdh.h
 gost_sign.o: ../../include/openssl/ecdsa.h ../../include/openssl/engine.h
-gost_sign.o: ../../include/openssl/evp.h ../../include/openssl/lhash.h
-gost_sign.o: ../../include/openssl/obj_mac.h ../../include/openssl/objects.h
+gost_sign.o: ../../include/openssl/err.h ../../include/openssl/evp.h
+gost_sign.o: ../../include/openssl/lhash.h ../../include/openssl/obj_mac.h
+gost_sign.o: ../../include/openssl/objects.h
 gost_sign.o: ../../include/openssl/opensslconf.h
 gost_sign.o: ../../include/openssl/opensslv.h ../../include/openssl/ossl_typ.h
 gost_sign.o: ../../include/openssl/pkcs7.h ../../include/openssl/rand.h

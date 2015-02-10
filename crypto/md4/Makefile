@@ -34,7 +34,7 @@ top:
 all:    lib
 
 lib:    $(LIBOBJ)
-	$(ARX) $(LIB) $(LIBOBJ)
+	$(AR) $(LIB) $(LIBOBJ)
 	$(RANLIB) $(LIB) || echo Never mind.
 	@touch lib
 
@@ -69,7 +69,6 @@ depend:
 dclean:
 	$(PERL) -pe 'if (/^# DO NOT DELETE THIS LINE/) {print; exit(0);}' $(MAKEFILE) >Makefile.new
 	mv -f Makefile.new $(MAKEFILE)
-	rm -f ../../include/openssl/$(EXHEADER) ../../test/$(TEST) ../../apps/$(APPS)
 
 clean:
 	rm -f asm/mx86unix.cpp *.o asm/*.o *.obj lib tags core .pure .nfs* *.old *.bak fluff

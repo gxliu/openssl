@@ -116,8 +116,7 @@ EOF
 }
 
 if($recurse) {
-	@source = ( <crypto/*.c>, <crypto/*/*.c>, <ssl/*.c>,
-			<fips/*.c>, <fips/*/*.c>);
+	@source = ( <crypto/*.c>, <crypto/*/*.c>, <ssl/*.c> )
 } else {
 	@source = @ARGV;
 }
@@ -252,7 +251,7 @@ while (($hdr, $lib) = each %libinc)
 
 	if ($gotfile) {
 	  while(<IN>) {
-		if(/^\#define\s+(\S+)\s+(\S+)/) {
+		if(/^\#\s*define\s+(\S+)\s+(\S+)/) {
 			$name = $1;
 			$code = $2;
 			next if $name =~ /^${lib}err/;

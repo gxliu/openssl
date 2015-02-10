@@ -35,7 +35,6 @@ L TS		crypto/ts/ts.h			crypto/ts/ts_err.c
 L HMAC		crypto/hmac/hmac.h		crypto/hmac/hmac_err.c
 L CMS		crypto/cms/cms.h		crypto/cms/cms_err.c
 L JPAKE		crypto/jpake/jpake.h		crypto/jpake/jpake_err.c
-L FIPS		fips/fips.h			crypto/fips_err.h
 
 # additional header files to be scanned for function names
 L NONE		crypto/x509/x509_vfy.h		NONE
@@ -51,7 +50,6 @@ F RSAREF_F_RSA_PRIVATE_DECRYPT
 F RSAREF_F_RSA_PRIVATE_ENCRYPT
 F RSAREF_F_RSA_PUBLIC_DECRYPT
 F RSAREF_F_RSA_PUBLIC_ENCRYPT
-#F SSL_F_CLIENT_CERTIFICATE
 
 R SSL_R_SSLV3_ALERT_UNEXPECTED_MESSAGE		1010
 R SSL_R_SSLV3_ALERT_BAD_RECORD_MAC		1020

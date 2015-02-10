@@ -59,7 +59,6 @@ $bf_enc_src="";
 	  'x86_64-mont' => 'crypto/bn',
 	  'x86_64-mont5' => 'crypto/bn',
 	  'x86_64-gf2m' => 'crypto/bn',
-	  'modexp512-x86_64' => 'crypto/bn',
 	  'aes-x86_64' => 'crypto/aes',
 	  'vpaes-x86_64' => 'crypto/aes',
 	  'bsaes-x86_64' => 'crypto/aes',
@@ -78,6 +77,8 @@ $bf_enc_src="";
 	  'sha1-mb-x86_64' => 'crypto/sha',
 	  'sha256-mb-x86_64' => 'crypto/sha',
 	  'ecp_nistz256-x86_64' => 'crypto/ec',
+	  'wp-x86_64' => 'crypto/whrlpool',
+	  'cmll-x86_64' => 'crypto/camellia',
          );
 
 # If I were feeling more clever, these could probably be extracted

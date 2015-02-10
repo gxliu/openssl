@@ -6,6 +6,7 @@ CFLAGS= $(INCLUDES) $(CFLAG)
 LIB=$(TOP)/libcrypto.a
 LIBOBJ=jpake.o jpake_err.o
 LIBSRC=jpake.c jpake_err.c
+SRC= $(LIBSRC)
 
 EXHEADER=jpake.h
 TEST=jpaketest.c
@@ -16,7 +17,7 @@ top:
 all:	lib
 
 lib:	$(LIBOBJ)
-	$(ARX) $(LIB) $(LIBOBJ)
+	$(AR) $(LIB) $(LIBOBJ)
 	$(RANLIB) $(LIB) || echo Never mind.
 	@touch lib
 
@@ -43,8 +44,6 @@ dclean:
 clean:
 	rm -f *.s *.o *.obj des lib tags core .pure .nfs* *.old *.bak fluff
 
-jpaketest: top jpaketest.c $(LIB)
-	$(CC) $(CFLAGS) -Wall -Werror -g -o jpaketest jpaketest.c $(LIB)
 # DO NOT DELETE THIS LINE -- make depend depends on it.
 
 jpake.o: ../../include/openssl/bio.h ../../include/openssl/bn.h
